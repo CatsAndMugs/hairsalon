@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "hairsalondac5a2a5": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
