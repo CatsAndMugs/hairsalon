@@ -1,30 +1,18 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React from 'react';
+import logo from './logo.svg';
 import './App.css';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import Admin from './components/Admin';
-import LogIn from './components/LogIn';
-//import Footer from './components/Footer';
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 
-
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Router>
-          <div>
-            <Navbar />
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/admin" component={Admin} />
-              <Route exact path="/login" component={LogIn} />
-            </Switch>
-          </div>
-        </Router>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <div className="App">
+      <header>
+        <img src={logo} className="App-logo" alt="logo" />
+        <h1>We now have Auth!</h1>
+      </header>
+      <AmplifySignOut />
+    </div>
+  );
 }
 
-export default App;
+export default withAuthenticator(App);
